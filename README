@@ -1,3 +1,8 @@
-Facebook liked counter
-Display like number in LCD 20*4 with I2C module
+Facebook liked counter.
+Display like number in LCD 20*4 with I2C module.
+USE python3.
+And please add export command in .bashrc
+
+export QUICK2WIRE_API_HOME=~/fblikebox/quick2wire-python-api
+export PYTHONPATH=$PYTHONPATH:$QUICK2WIRE_API_HOME
 
