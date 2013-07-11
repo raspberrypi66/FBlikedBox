@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+ 
 from i2clibraries import i2c_lcd
 from time import * 
 import urllib.request
@@ -5,8 +7,11 @@ import json
 
 def printPageLiked():
  url = 'https://graph.facebook.com/raspberrypi66'
- fbResult= json.loads(urllib.request.urlopen(url).read().decode("utf-8"))
- writeBigNumber(fbResult['likes'])
+ try:
+  fbResult= json.loads(urllib.request.urlopen(url).read().decode("utf-8"))
+  writeBigNumber(fbResult['likes'])
+ except:
+  print("can't connect to server")
 
 def writeBigNumber(number):
  number=str(number).zfill(5)
