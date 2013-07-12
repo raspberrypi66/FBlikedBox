@@ -6,7 +6,7 @@ import urllib.request
 import json
 
 def printPageLiked():
- url = 'https://graph.facebook.com/raspberrypi66'
+ url = 'https://graph.facebook.com/raspberrypi66?fields=likes'
  try:
   fbResult= json.loads(urllib.request.urlopen(url).read().decode("utf-8"))
   writeBigNumber(fbResult['likes'])
